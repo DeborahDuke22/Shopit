@@ -13,8 +13,8 @@
 </head>
 <body>
 	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3" >
-			<a class="navbar-brand" href="{% url 'store' %}">ShopIt</a>
+		<nav class="navbar navbar-expand-lg navbar navbar-dark px-3" style="background-color: #d340e3;">
+			<a class="navbar-brand" href="{% url 'store:store' %}">ShopIt</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="navbar-toggler-icon"></span>
 			</button>
@@ -22,17 +22,19 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			  <ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-				  <a class="nav-link" href="{% url 'store' %}"> <span class="sr-only"></span></a>
+				  <a class="nav-link" href="{% url 'store:store' %}"> <span class="sr-only"></span></a>
 				</li>
 				<li class="nav-item dropdown">
                    
-				  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				
+
+				  <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'store:search_bar' %}">
+					{% csrf_token %}
+					<input class="form-control mr-sm-2" type="search" placeholder="Search for product" aria-label="Search" name="searched">
 					
-				  </a>
-                  <li class = "search-box">
-                    <input class = "search-txt" type = "text" name ="" placeholder ="Type to search">
-                    <a class "search-btn" href="#">{{category.title}}</a>
-                </li>
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				  </form>
+                 
 				  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 					  
 					<li><a class="dropdown-item" href="#">{{category.title}}</a></li>
@@ -45,9 +47,9 @@
 		   
 			  </ul>
 			  <div class="navbar-nav ms-auto my-2 my-lg-0">
-				   <a href="#" class="btn btn-info">Login</a>
+				   <a href="{% url 'store:login' %}" class="btn btn-info">Login</a>
 				   
-				   <a href="{% url 'cart' %}">
+				   <a href="{% url 'store:cart' %}">
 					  <img  id="cart-icon" src="{% static 'images/cart4.png' %}">
 				  </a>
 				  <p id="cart-total">0</p>

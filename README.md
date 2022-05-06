@@ -1,5 +1,5 @@
 ## ShopIt
-ShopIt is an online e- commerce shoe store, build using Django. Heroku URL
+ShopIt is an online e- commerce shoe store, developed using Django. Heroku URL
  Deployed on Heroku(https://debsproject.herokuapp.com/)
 
 ## Home Page

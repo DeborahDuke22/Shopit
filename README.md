@@ -7,7 +7,7 @@ ShopIt is an online e- commerce shoe store, build using Django. Heroku URL
 
 ## Login Page
 
-- Deborah Duke ![login](https://user-images.githubusercontent.com/77339575/167217543-a6ba6318-361c-4c57-8ee5-b2ab0b6f8736.png)
+ ![login](https://user-images.githubusercontent.com/77339575/167217543-a6ba6318-361c-4c57-8ee5-b2ab0b6f8736.png)
 
 ## Steps 
 .  Download or fork folder then push to editor of your choice

@@ -5,8 +5,10 @@ from decimal import Decimal
 from pathlib import Path
 from django.db import models
 from django.core.management.base import BaseCommand, CommandError
+from django.contrib.auth.models import User
+from faker import Faker
 
-from store.models import Store, Category
+from store.models import *
 
 #We use the command tools so that we gain access to our models and database connections
 #https://docs.djangoproject.com/en/3.1/howto/custom-management-commands/ 
@@ -20,6 +22,7 @@ class Command(BaseCommand):
         # drop the data from the table so that if we rerun the file, we don't repeat values
         Store.objects.all().delete()
         Category.objects.all().delete()
+        #Customer.objects.all().delete()
         print("table dropped successfully")
         # create table again
 
@@ -50,27 +53,26 @@ class Command(BaseCommand):
                 )
                 store.save()
 
-          fake = Faker()
+        fake = Faker()
 
         # create some customers
         # we convert some values from tuples to strings
-        for i in range(10):
-            first_name = fake.first_name(),
-            first_name = str(first_name[0])
-            last_name = fake.last_name(),
-            last_name = str(last_name[0])
-            username = first_name + last_name,
-            username = username[0]
-            user = User.objects.create_user(
-            username = username,
-            first_name = first_name,
-            last_name = last_name,
-            email = fake.ascii_free_email(), 
-            password = 'p@ssw0rd')
-            customer = Customer.objects.get(user = user)
-            customer.address = fake.address(),
-            customer.address = str(customer.address[0])
-            customer.save()
+        # for i in range(10):
+        #     first_name = fake.first_name(),
+        #     first_name = str(first_name[0])
+        #     last_name = fake.last_name(),
+        #     last_name = str(last_name[0])
+        #     username = first_name + last_name,
+        #     username = username[0]
+        #     user = User.objects.create_user(
+        #     username = username,
+        #     first_name = first_name,
+        #     last_name = last_name,
+        #     email = fake.ascii_free_email(), 
+        #     password = 'p@ssw0rd')
+        #     customer = Customer.objects.get(user = user)
+        #     customer.address = fake.address(),
+        #     customer.save()
 
 
         print("data parsed successfully")

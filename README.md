@@ -10,10 +10,8 @@ ShopIt is an  e- commerce shoe store, developed using Django. Deployed on Heroku
 
 ## Steps 
 Download or fork folder then push to editor of your choice
-Activate virtual environment by typing the following command into your command prompt: .venv/Scripts/activate
-Install Python and ensure version is up to date
-install django
-Run server using the following command: python manage.py runserver
+.Activate virtual environment by typing the following command into your command prompt: .venv/Scripts/activate
+.Install Python and ensure version is up to date, then install django. Run server using the following command: python manage.py runserver
 
 ## Program Language Used
 - Django
